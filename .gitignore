@@ -1,0 +1,9 @@
+#Temporaries
+*~
+*.*~*
+*.bak
+
+#Binaries
+*.pdf
+*.htm*
+
