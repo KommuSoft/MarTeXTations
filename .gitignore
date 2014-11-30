@@ -6,4 +6,5 @@
 #Binaries
 *.pdf
 *.htm*
-
+#JavaScripts
+jquery.min.js

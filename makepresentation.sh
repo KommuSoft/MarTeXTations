@@ -38,4 +38,4 @@ do
 	fi
 	slide
 done
-echo '</div><script src="impress.js/js/impress.js"></script><script>impress().init();</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script></body></html>'
+echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script>impress().init();</script></body></html>'
