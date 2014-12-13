@@ -9,8 +9,9 @@
 # What is MarTeXTation?
 
  - Ease creation of presentation making.
- - GUI too much effort, not portable
+ - GUI: too much effort, not portable, bloated, not for programmers,...
  - Solution: convert markdown to "binaries" (HTM*, TeXPDF, ...)
+ - and... lazily add features to the "compiler" by need
  
 ----
 
