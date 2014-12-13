@@ -25,7 +25,7 @@ slid=0;
 echo '<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=1024" /><meta name="apple-mobile-web-app-capable" content="yes" />';
 echo "<title>$titl</title><meta name=\"description\" content=\"$desc\"/><meta name=\"author\" content=\"$auth\"/>"
 echo ''; #<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-echo '<link href="impress.js/css/impress-demo.css" rel="stylesheet"/><link href="custom.css" rel="stylesheet"/></head><body><div class="fallback-message"><p>Your browser <b>does not support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p><p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p></div><div id="impress">'
+echo '<link href="presentation.css" rel="stylesheet"/><link href="custom.css" rel="stylesheet"/></head><body><div class="fallback-message"><p>Your browser <b>does not support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p><p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p></div><div id="impress">'
 makeTitle
 for slb in `echo "$cnt" | grep -n -e '----' | cut -f1 -d:`
 do
