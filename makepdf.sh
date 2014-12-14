@@ -16,8 +16,10 @@ function makeTitle () {
 }
 
 function slide () {
-	ftip=$(echo "$cnti" | grep -P '#+ (.*)' | tail -n 1 | sed -r 's/#+ +//g')
+	fisc=$(echo "$cnti" | grep -P '#+ (.*)')
+	ftip=$(echo "$fisc" | tail -n 1 | sed -r 's/#+ +//g')
 	ftit="$ftip"
+	echo "$fisc" | pandoc -f markdown -t latex -S --normalize
 	frmi=$(echo "$cnti" | pandoc -f markdown -t latex -S --normalize)
 	echo "\\begin{frame}[allowframebreak]{$ftit}"
 	echo "$frmi" | grep -v -P '\\section\{.*|\\label{.*'

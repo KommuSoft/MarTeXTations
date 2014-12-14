@@ -17,8 +17,17 @@
 
 # Main focus on scientific presentations
 
+Uniformly made presentations with support for typical scientific constructions.
+
+ - TeX math formatting
+ - plotting data (`.csv` files)
+
+----
+
+## TeX math formatting
+
  - TeX formatted formulas: $\phi=\frac{1+\sqrt{5}}{2}$
 
 ----
 
-<center><strong>Any questions?</strong></center>
+# Any questions?
