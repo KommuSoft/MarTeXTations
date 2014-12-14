@@ -7,7 +7,7 @@ function makeHeader () {
 }
 
 function makeFooter () {
-	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="http://math.etsu.edu/LaTeXMathML/LaTeXMathML.js"></script><script>impress().init();</script></body></html>'
+	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script></body></html>'
 }
 
 function makeTitle () {
@@ -22,7 +22,7 @@ function makeTitle () {
 function slide () {
 	thex=$((1200*$slid+1200))
 	echo "			<div id=\"slide$slid\" class=\"step slide bootstrapslide\" data-x=\"$thex\" data-y=\"0\">"
-	echo "$cnti" | pandoc -f markdown -t html5s
+	echo "$cnti" | pandoc -f markdown -t html5
 	echo '			</div>';
 	slid=$(($slid+1))
 }
