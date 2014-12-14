@@ -4,7 +4,7 @@ function makeHeader () {
 	echo "\\title{$titl}"
 	echo "\\author{$auth}"
 	echo "\\date{$date}"
-	echo '\begin{document}' x#\AtBeginSection[] {\begin{frame}[plain]\frametitle{Overview}\tableofcontents[currentsection]\end{frame}}
+	echo '\begin{document}' #\AtBeginSection[] {\begin{frame}[plain]\frametitle{Overview}\tableofcontents[currentsection]\end{frame}}
 }
 
 function makeFooter () {
@@ -16,10 +16,12 @@ function makeTitle () {
 }
 
 function slide () {
-	ftit='Frame title';
-	echo "	\\begin{frame}[allowframebreak]{$ftit}";
-	echo "$cnti" | pandoc -f markdown -t latex;
-	echo '	\end{frame}';
+	ftip=$(echo "$cnti" | grep -P '#+ (.*)' | tail -n 1 | sed -r 's/#+ +//g')
+	ftit="$ftip"
+	frmi=$(echo "$cnti" | pandoc -f markdown -t latex -S --normalize)
+	echo "\\begin{frame}[allowframebreak]{$ftit}"
+	echo "$frmi" | grep -v -P '\\section\{.*|\\label{.*'
+	echo '\end{frame}'
 }
 
 cnt=$(cat)

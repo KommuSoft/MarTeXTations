@@ -22,7 +22,7 @@ function makeTitle () {
 function slide () {
 	thex=$((1200*$slid+1200))
 	echo "			<div id=\"slide$slid\" class=\"step slide bootstrapslide\" data-x=\"$thex\" data-y=\"0\">"
-	echo "$cnti" | pandoc -f markdown -t html
+	echo "$cnti" | pandoc -f markdown -t html5s
 	echo '			</div>';
 	slid=$(($slid+1))
 }
