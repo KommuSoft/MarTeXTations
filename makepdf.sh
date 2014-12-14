@@ -4,7 +4,7 @@ function makeHeader () {
 	echo "\\title{$titl}"
 	echo "\\author{$auth}"
 	echo "\\date{$date}"
-	echo '\begin{document}'
+	echo '\begin{document}' x#\AtBeginSection[] {\begin{frame}[plain]\frametitle{Overview}\tableofcontents[currentsection]\end{frame}}
 }
 
 function makeFooter () {
@@ -16,8 +16,8 @@ function makeTitle () {
 }
 
 function slide () {
-	thex=$((1200*$slid+1200))
-	echo '	\begin{frame}{}';
+	ftit='Frame title';
+	echo "	\\begin{frame}[allowframebreak]{$ftit}";
 	echo "$cnti" | pandoc -f markdown -t latex;
 	echo '	\end{frame}';
 }

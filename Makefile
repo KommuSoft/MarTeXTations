@@ -6,7 +6,9 @@
 	make install
 #	temp := $(basename "$@" ".pdf")
 	bash makepdf.sh <$< | pdflatex -jobname=`basename "$@" ".pdf"`
-	#rm -f "$b.aux $b.log $b.nav $b.out $thef.snm ${TFL}.toc"
+	bash makepdf.sh <$< | pdflatex -jobname=`basename "$@" ".pdf"`
+	bash makepdf.sh <$< | pdflatex -jobname=`basename "$@" ".pdf"`
+	#rm -f "*.aux *.log *.nav *.out *.snm *.toc"
 
 install : custom.less Makefile .gitmodules
 	git submodule update --init --recursive
