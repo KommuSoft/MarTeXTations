@@ -30,4 +30,14 @@ Uniformly made presentations with support for typical scientific constructions.
 
 ----
 
+## Data plots
+
+By using `d3.js` and `TikZ`.
+
+----
+
+Example 
+
+----
+
 # Any questions?
