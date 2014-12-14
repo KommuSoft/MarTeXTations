@@ -4,7 +4,7 @@ function makeHeader () {
 	echo "\\title{$titl}"
 	echo "\\author{$auth}"
 	echo "\\date{$date}"
-	echo '\begin{document}' #\AtBeginSection[] {\begin{frame}[plain]\frametitle{Overview}\tableofcontents[currentsection]\end{frame}}
+	echo '\begin{document}\AtBeginSection[] {\begin{frame}[plain]\frametitle{Overview}\tableofcontents[currentsection]\end{frame}}'
 }
 
 function makeFooter () {
