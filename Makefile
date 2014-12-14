@@ -4,7 +4,7 @@
 
 %.pdf : %.md custom.less *.css *.sh Makefile
 	make install
-	bash makepdf.sh <$< >$@
+	bash makepdf.sh <$< | pdflatex -jobname=`basename $@ ".pdf"`
 
 install : custom.less Makefile .gitmodules
 	git submodule update --init --recursive

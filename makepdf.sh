@@ -13,14 +13,19 @@ function makeFooter () {
 }
 
 function makeTitle () {
-	echo '	\begin{frame}';
-	echo '		\maketitle{}';
-	echo '	\end{frame}';
+	echo '	\begin{frame};
+	\maketitle{}
+\end{frame}
+\begin{frame}
+	\tableofcontents{}
+\end{frame}';
 }
 
 function slide () {
 	thex=$((1200*$slid+1200))
-	#echo "$cnti" | pandoc -f markdown -t latex
+	echo '	\begin{frame}{}';
+	echo "$cnti" | pandoc -f markdown -t latex;
+	echo '	\end{frame}';
 }
 
 cnt=$(cat)
@@ -44,5 +49,3 @@ do
 	slide
 done
 makeFooter
-
-#cat mydoc.tex | pdflatex -jobname=mydoc 

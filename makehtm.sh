@@ -47,3 +47,4 @@ do
 	fi
 	slide
 done
+makeFooter
