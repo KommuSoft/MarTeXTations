@@ -17,7 +17,7 @@
 
 # Main focus on scientific presentations
 
- - TeX formatted formulas
+ - TeX formatted formulas: $\phi=\frac{1+\sqrt{5}}{2}$
 
 ----
 

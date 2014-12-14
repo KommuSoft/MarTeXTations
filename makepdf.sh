@@ -3,8 +3,7 @@ function makeHeader () {
 	echo '\documentclass{beamer}';
 	echo "\\title{$titl}"
 	echo "\\author{$auth}"
-	echo "\\title{$titl}"
-	echo "\\title{$titl}"
+	echo "\\date{$date}"
 	echo '\begin{document}'
 }
 
@@ -13,12 +12,7 @@ function makeFooter () {
 }
 
 function makeTitle () {
-	echo '	\begin{frame};
-	\maketitle{}
-\end{frame}
-\begin{frame}
-	\tableofcontents{}
-\end{frame}';
+	echo '	\begin{frame}\maketitle{}\end{frame}\begin{frame}\tableofcontents{}\end{frame}'
 }
 
 function slide () {

@@ -7,7 +7,7 @@ function makeHeader () {
 }
 
 function makeFooter () {
-	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script>impress().init();</script></body></html>'
+	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="http://math.etsu.edu/LaTeXMathML/LaTeXMathML.js"></script><script>impress().init();</script></body></html>'
 }
 
 function makeTitle () {
