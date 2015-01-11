@@ -175,30 +175,45 @@ a:focus {
 */
 
 #title {
+    font-size: 95px;
+    font-size: 2vw;
     padding: 0;
+	margin-bottom: 3cm;
+    text-align: center;
 }
 
-#title .try {
-    font-size: 64px;
-    position: absolute;
-    top: -0.5em;
-    left: 1.5em;
-
-    -webkit-transform: translateZ(20px);
-    -moz-transform:    translateZ(20px);
-    -ms-transform:     translateZ(20px);
-    -o-transform:      translateZ(20px);
-    transform:         translateZ(20px);
-}
-
-#title h1 {
+#title .supertitle {
     font-size: 190px;
-
+    font-size: 5vw;
+    margin-bottom: 3cm;
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
     -ms-transform:     translateZ(50px);
     -o-transform:      translateZ(50px);
     transform:         translateZ(50px);
+}
+
+#title .date {
+    font-size: 95px;
+    font-size: 2vw;
+}
+
+#title .author {
+    font-size: 95px;
+    font-size: 2vw;
+    white-space: nowrap;
+}
+
+#title .authorby {
+	display: inline;
+	color: #606060;
+}
+
+#title .institute {
+    font-size: 95px;
+    font-size: 2vw;
+	display: inline;
+	color: #606060;
 }
 
 #title .footnote {

@@ -120,3 +120,6 @@ sympy-plots-for-*.tex/
 
 #Additional files
 LaTeXMathML.js
+
+#Presentations
+lhmm.md

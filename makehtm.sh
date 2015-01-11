@@ -11,11 +11,19 @@ function makeFooter () {
 }
 
 function makeTitle () {
-	echo '			<div id="title" class="step" data-x="0" data-y="0" data-scale="4">';
-	#				<span class="try">then you should try</span>
-	echo "					<h1><center>$titl</center></h1>"
-	echo "				<span><center>$date</center></span>"
-	echo "				<span>By $auth</span>"
+	echo '			<div id="title" class="step" data-x="0" data-y="0" data-scale="5">';
+	echo "					<h1 class=\"supertitle\"><center>$titl</center></h1>"
+	echo "				<span class=\"date\"><center>$date</center></span>"
+	echo "				<span class=\"author\"><div class=\"authorby\">by</div> $auth</span>"
+	echo "				<span class=\"institute\">$inst</span>"
+	echo '			</div>';
+}
+
+function makeToc () {
+	echo '			<div id="toc" class="step" data-x="0" data-y="0" data-scale="5">';
+	echo "					<h1 class=\"supertitle\"><center>$titl</center></h1>"
+	echo "				<span class=\"date\"><center>$date</center></span>"
+	echo "				<span class=\"author\"><div class=\"author authorby\">By</div> $auth</span>"
 	echo '			</div>';
 }
 
@@ -32,6 +40,7 @@ titl=$(echo "$cnt" | bash scrape.sh -t)
 desc=$(echo "$cnt" | bash scrape.sh -D)
 auth=$(echo "$cnt" | bash scrape.sh -a)
 date=$(echo "$cnt" | bash scrape.sh -d)
+inst=$(echo "$cnt" | bash scrape.sh -i)
 slid=0;
 makeHeader
 makeTitle
