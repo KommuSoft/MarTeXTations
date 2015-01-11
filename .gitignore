@@ -123,3 +123,7 @@ LaTeXMathML.js
 
 #Presentations
 lhmm.md
+
+#Data
+*.dat
+data/**
