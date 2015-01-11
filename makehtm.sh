@@ -11,7 +11,7 @@ function makeFooter () {
 }
 
 function makeTitle () {
-	echo '			<div id="title" class="step" data-x="0" data-y="0" data-scale="5">';
+	echo '			<div id="title" class="step" data-x="0" data-y="0" data-z="0" data-scale="5">';
 	echo "					<h1 class=\"supertitle\"><center>$titl</center></h1>"
 	echo "				<span class=\"date\"><center>$date</center></span>"
 	echo "				<span class=\"author\"><div class=\"authorby\">by</div> $auth</span>"
@@ -20,16 +20,13 @@ function makeTitle () {
 }
 
 function makeToc () {
-	echo '			<div id="toc" class="step" data-x="0" data-y="0" data-scale="5">';
-	echo "					<h1 class=\"supertitle\"><center>$titl</center></h1>"
-	echo "				<span class=\"date\"><center>$date</center></span>"
-	echo "				<span class=\"author\"><div class=\"author authorby\">By</div> $auth</span>"
+	echo '			<div id="toc" class="step side bootstrapslide" data-x="0" data-y="0" data-z="-1000" data-scale="1">';
 	echo '			</div>';
 }
 
 function slide () {
 	thex=$((1200*$slid+1200))
-	echo "			<div id=\"slide$slid\" class=\"step slide bootstrapslide\" data-x=\"$thex\" data-y=\"0\">"
+	echo "			<div id=\"slide$slid\" class=\"step slide bootstrapslide\" data-x=\"$thex\" data-y=\"0\" data-z=\"-1000\">"
 	echo "$cnti" | pandoc -f markdown -t html5
 	echo '			</div>';
 	slid=$(($slid+1))
@@ -44,6 +41,7 @@ inst=$(echo "$cnt" | bash scrape.sh -i)
 slid=0;
 makeHeader
 makeTitle
+makeToc
 for slb in `echo "$cnt" | grep -n -e '----' | cut -f1 -d:`
 do
 	slb=$(($slb+1))
