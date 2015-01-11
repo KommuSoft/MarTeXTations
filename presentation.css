@@ -219,3 +219,39 @@ a:focus {
 #title .footnote {
     font-size: 32px;
 }
+
+#toc .toctitle {
+    font-size: 190px;
+    font-size: 4vw;
+    margin-bottom: 36px;
+	border-bottom: thick solid #000;
+}
+
+#toc .toctable {
+    font-size: 190px;
+    font-size: 1.5vw;
+}
+
+#toc ul {
+    list-style-type: square;
+}
+
+#toc ul ul {
+    list-style-type: disc;
+}
+
+#toc ul ul ul {
+    list-style-type: circle;
+}
+
+#slide {
+	font-size: 190px;
+    font-size: 1.5vw;
+}
+
+#slide h1 {
+    font-size: 190px;
+    font-size: 4vw;
+    margin-bottom: 36px;
+	border-bottom: thick solid #000;
+}

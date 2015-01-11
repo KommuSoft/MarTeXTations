@@ -20,13 +20,15 @@ function makeTitle () {
 }
 
 function makeToc () {
-	echo '			<div id="toc" class="step side bootstrapslide" data-x="0" data-y="0" data-z="-1000" data-scale="1">';
-	echo '			</div>';
+	echo '			<div id="toc" class="step" data-x="0" data-y="0" data-z="-1000" data-scale="1">';
+	echo '					<h1 class="toctitle"><center>Overview</center></h1><div class="toctable">';
+	echo "$cnt" | bash generatetoc.sh
+	echo '			</div></div>';
 }
 
-function slide () {
+function slide () { #check if contains h1
 	thex=$((1200*$slid+1200))
-	echo "			<div id=\"slide$slid\" class=\"step slide bootstrapslide\" data-x=\"$thex\" data-y=\"0\" data-z=\"-1000\">"
+	echo "			<div id=\"slide$slid\" class=\"step slide\" data-x=\"$thex\" data-y=\"0\" data-z=\"-1000\">"
 	echo "$cnti" | pandoc -f markdown -t html5
 	echo '			</div>';
 	slid=$(($slid+1))
