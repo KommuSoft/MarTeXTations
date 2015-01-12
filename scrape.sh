@@ -7,7 +7,7 @@ dfp=':\s*(.*?)'
 while test $# -gt 0; do
     case "$1" in
         -h|--help)
-            echo "Not much to help with"
+            man "./scrape.man"
             exit 0
             ;;
         -t|--title)
@@ -28,6 +28,10 @@ while test $# -gt 0; do
         -i|--institute)
             frm='institute'
             ;;
+        --custom)
+        	shift
+        	from="$1"
+        	;;
         *)
             break
             ;;

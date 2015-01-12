@@ -1,0 +1,39 @@
+.\" Manpage for scrape.sh.
+.\" Contact Willem.VanOnsem@cs.kuleuven.be to correct errors or typos.
+.TH man 6 "12 Jan 2015" "0.1" "scrape.sh man page"
+.SH NAME
+scrape.sh \- scrape modifiers out of a Markdown file.
+.SH SYNOPSIS
+scrape.sh [OPTIONS]
+.SH DESCRIPTION
+Per content flag, it prints the corresponding content on the stdout, one line at a time.
+.SH OPTIONS
+.TP
+.B -h | --help | -?
+Show this manual page.
+.TP
+.B --custom "identifier"
+Extract the content corresponding to the given identifier.
+.TP
+.B -t | --title
+Extract the title.
+.TP
+.B -a | --author
+Extract the author.
+.TP
+.B -d | --date
+Extract the date.
+.TP
+.B -e | --email
+Extract the email.
+.TP
+.B -D | --description
+Extract the description.
+.TP
+.B -i | --instititute
+Extract the institute.
+.SH SEE ALSO
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Willem Van Onsem (Willem.VanOnsem@cs.kuleuven.be)

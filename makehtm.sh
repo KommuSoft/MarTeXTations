@@ -3,11 +3,11 @@ function makeHeader () {
 	echo '<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=1024" /><meta name="apple-mobile-web-app-capable" content="yes" />';
 	echo "<title>$titl</title><meta name=\"description\" content=\"$desc\"/><meta name=\"author\" content=\"$auth\"/>"
 	echo ''; #<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-	echo '<link href="presentation.css" rel="stylesheet"/><link href="custom.css" rel="stylesheet"/></head><body><div class="fallback-message"><p>Your browser <b>does not support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p><p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p></div><div id="impress">'
+	echo '<link href="presentation.css" rel="stylesheet"/><link href="d3plotter/d3plotter/public_html/d3plotter.css" rel="stylesheet"/><link href="custom.css" rel="stylesheet"/></head><body><div class="fallback-message"><p>Your browser <b>does not support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p><p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p></div><div id="impress">'
 }
 
 function makeFooter () {
-	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script></body></html>'
+	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script></body></html>'
 }
 
 function makeTitle () {

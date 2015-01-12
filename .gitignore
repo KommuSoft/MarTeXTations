@@ -2,12 +2,15 @@
 *~
 *.*~*
 *.bak
+*.tml
 
 #Binaries
 *.pdf
 *.htm*
+
 #JavaScripts
 jquery.min.js
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -20,10 +23,11 @@ jquery.min.js
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
+
 # these rules might exclude image files for figures etc.
-# *.ps
-# *.eps
-# *.pdf
+*.ps
+*.eps
+*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
