@@ -123,47 +123,6 @@ a:focus {
 .impress-enabled .step.active { opacity: 1 }
 
 /*
-    These 'slide' step styles were heavily inspired by HTML5 Slides:
-    http://html5slides.googlecode.com/svn/trunk/styles.css
-
-    ;)
-
-    They cover everything what you see on first three steps of the demo.
-*/
-.slide {
-    display: block;
-
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
-
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
-}
-
-.slide q {
-    display: block;
-    font-size: 50px;
-    line-height: 72px;
-
-    margin-top: 100px;
-}
-
-.slide q strong {
-    white-space: nowrap;
-}
-
-/*
     And now we start to style each step separately.
 
     I agree that this may be not the most efficient, object-oriented and
@@ -244,14 +203,80 @@ a:focus {
     list-style-type: circle;
 }
 
-#slide {
-	font-size: 190px;
+/*
+    These 'slide' step styles were heavily inspired by HTML5 Slides:
+    http://html5slides.googlecode.com/svn/trunk/styles.css
+
+    ;)
+
+    They cover everything what you see on first three steps of the demo.
+*/
+.slide {
+    display: block;
+
+    width: 60vw;
+    height: 48vw;
+    padding: 20px 30px;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30;
+    font-size: 1.5vw;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.slide q {
+    display: block;
+    /*font-size: 50px;*/
+    line-height: 72px;
+
+    margin-top: 100px;
+}
+
+.slide q strong {
+    white-space: nowrap;
+}
+
+.slide blockquote {
+    font-size: 30;
     font-size: 1.5vw;
 }
 
-#slide h1 {
+.slide blockquote ul {
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	margin-bottom: 0em;
+	margin-top: 0em;
+    padding: 0px 50px;
+}
+
+.slide blockquote ul li {
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	margin-bottom: 0em;
+	margin-top: 0em;
+    padding: 0px 0px;
+}
+
+.slide p {
+}
+
+.slide h1 {
     font-size: 190px;
-    font-size: 4vw;
-    margin-bottom: 36px;
+    font-size: 3vw;
 	border-bottom: thick solid #000;
+}
+
+.slide h2 {
+    font-size: 190px;
+    font-size: 2vw;
+	border-bottom: dotted #000;
 }

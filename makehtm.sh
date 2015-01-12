@@ -26,15 +26,30 @@ function makeToc () {
 	echo '			</div></div>';
 }
 
-function slide () { #check if contains h1
+function makeSlide () { #check if contains h1
+	cntip=$(echo "$cnti" | pandoc -f markdown -t html5)
+	if [ `xmllint --html --xpath 'count(//h1)' -` -gt 0 ]
+	then
+		chpi=$(($chpi+$chpr))
+	fi
 	thex=$((1200*$slid+1200))
-	echo "			<div id=\"slide$slid\" class=\"step slide\" data-x=\"$thex\" data-y=\"0\" data-z=\"-1000\">"
-	echo "$cnti" | pandoc -f markdown -t html5
+	echo "			<div id=\"slide$slid\" class=\"step slide\" data-x=\"$thex\" data-y=\"0\" data-z=\"-1000\" data-rotate=\"$chpi\">"
+	echo "$cntip"
 	echo '			</div>';
 	slid=$(($slid+1))
 }
 
+function conclusion () { #write detector
+	echo '			<div id="toc" class="step" data-x="0" data-y="0" data-z="-1000" data-scale="1">';
+	echo '					<h1 class="toctitle"><center>Overview</center></h1><div class="toctable">';
+	echo "$cnt" | bash generatetoc.sh
+	echo '			</div></div>';
+}
+
 cnt=$(cat)
+chpr=$(echo "$cnt" | pandoc -s -f markdown -t html | xmllint --html --xpath 'count(//h1)' -)
+chpr=$((360/$chpr))
+chpi=$((-$chpr))
 titl=$(echo "$cnt" | bash scrape.sh -t)
 desc=$(echo "$cnt" | bash scrape.sh -D)
 auth=$(echo "$cnt" | bash scrape.sh -a)
@@ -54,6 +69,6 @@ do
 		sle=$(($sle-1))
 		cnti=$(echo "$cnti" | head -n $sle)
 	fi
-	slide
+	makeSlide
 done
 makeFooter

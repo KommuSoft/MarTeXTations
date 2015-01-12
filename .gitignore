@@ -131,3 +131,6 @@ lhmm.md
 #Data
 *.dat
 data/**
+
+#Plot data
+**.csv
