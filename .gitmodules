@@ -10,3 +10,6 @@
 [submodule "d3plotter"]
 	path = d3plotter
 	url = git@github.com:KommuSoft/d3plotter.git
+[submodule "d3-plugins"]
+	path = d3-plugins
+	url = git@github.com:d3/d3-plugins.git

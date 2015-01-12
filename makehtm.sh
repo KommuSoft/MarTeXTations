@@ -28,28 +28,37 @@ function makeToc () {
 
 function makeSlide () { #check if contains h1
 	cntip=$(echo "$cnti" | pandoc -f markdown -t html5)
-	if [ `xmllint --html --xpath 'count(//h1)' -` -gt 0 ]
+	if [ `echo "$cntip" | xmllint --html --xpath 'count(//h1)' -` -gt 0 ]
 	then
-		chpi=$(($chpi+$chpr))
+		chpi=$(($chpi+1))
+		thex=1200
+		tmp=$chpic
+		chpic=$((-$chpis))
+		chpis=$tmp
+	else
+		thex=$(($thex+1200))
 	fi
-	thex=$((1200*$slid+1200))
-	echo "			<div id=\"slide$slid\" class=\"step slide\" data-x=\"$thex\" data-y=\"0\" data-z=\"-1000\" data-rotate=\"$chpi\">"
+	drt=$(($chpr*$chpi))
+	dxr=$(($chpic*$thex))
+	dyr=$(($chpis*$thex))
+	echo "			<div id=\"slide$slid\" class=\"step slide\" data-rotate=\"$drt\" data-x=\"$dxr\" data-y=\"$dyr\" data-z=\"-1000\">"
 	echo "$cntip"
 	echo '			</div>';
 	slid=$(($slid+1))
 }
 
-function conclusion () { #write detector
-	echo '			<div id="toc" class="step" data-x="0" data-y="0" data-z="-1000" data-scale="1">';
-	echo '					<h1 class="toctitle"><center>Overview</center></h1><div class="toctable">';
-	echo "$cnt" | bash generatetoc.sh
-	echo '			</div></div>';
+function makeConclusion () {
+	echo '			<div id="conclusion" class="step concl" data-x="4000" data-y="4000" data-z="0" data-scale="5">'
+	echo "$cnti" | pandoc -f markdown -t html5
+	echo '			</div>'
 }
 
 cnt=$(cat)
-chpr=$(echo "$cnt" | pandoc -s -f markdown -t html | xmllint --html --xpath 'count(//h1)' -)
+chpr=$(echo "$cnt" | pandoc -s -f markdown -t html | xmllint --html --xpath 'count(//h1)-count(//h1[text()="Conclusion"])' -)
 chpr=$((360/$chpr))
-chpi=$((-$chpr))
+chpi=-1
+chpic=0
+chpis=-1
 titl=$(echo "$cnt" | bash scrape.sh -t)
 desc=$(echo "$cnt" | bash scrape.sh -D)
 auth=$(echo "$cnt" | bash scrape.sh -a)
@@ -69,6 +78,12 @@ do
 		sle=$(($sle-1))
 		cnti=$(echo "$cnti" | head -n $sle)
 	fi
-	makeSlide
+	prcs=$(echo "$cnti" | pandoc -s -f markdown -t html | xmllint --html --xpath '//h1[text()="Conclusion"]' - 2> /dev/null)
+	if [ ! -n "$prcs" ]
+	then
+		makeSlide
+	else
+		makeConclusion
+	fi
 done
 makeFooter

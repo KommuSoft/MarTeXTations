@@ -214,8 +214,8 @@ a:focus {
 .slide {
     display: block;
 
-    width: 60vw;
-    height: 48vw;
+    width: 900;
+    height: 500;
     padding: 20px 30px;
 
     background-color: white;
@@ -279,4 +279,21 @@ a:focus {
     font-size: 190px;
     font-size: 2vw;
 	border-bottom: dotted #000;
+}
+
+.concl {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 1.5vw;
+    line-height: 1.5;
 }
