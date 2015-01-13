@@ -89,7 +89,8 @@ a:focus {
 
 .step {
     position: relative;
-    width: 900px;
+    width: 50vw;
+    height: 50vw;
     padding: 40px;
     margin: 20px auto;
 
@@ -215,7 +216,7 @@ a:focus {
     display: block;
 
     width: 900;
-    height: 500;
+    height: 600;
     padding: 20px 30px;
 
     background-color: white;

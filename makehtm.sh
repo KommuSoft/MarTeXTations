@@ -7,7 +7,8 @@ function makeHeader () {
 }
 
 function makeFooter () {
-	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script></body></html>'
+	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script><script type="text/javascript" src="dagre-d3.min.js"></script>
+<script type="text/javascript" src="graphlib-dot.min.js"></script></body></html>'
 }
 
 function makeTitle () {
@@ -42,7 +43,8 @@ function makeSlide () { #check if contains h1
 	dxr=$(($chpic*$thex))
 	dyr=$(($chpis*$thex))
 	echo "			<div id=\"slide$slid\" class=\"step slide\" data-rotate=\"$drt\" data-x=\"$dxr\" data-y=\"$dyr\" data-z=\"-1000\">"
-	echo "$cntip"
+	echo "$cntu" | bash getbread.sh
+	echo "$cntip" | xsltproc -html filterhead.xslt - | tail -n +1
 	echo '			</div>';
 	slid=$(($slid+1))
 }
@@ -65,6 +67,7 @@ auth=$(echo "$cnt" | bash scrape.sh -a)
 date=$(echo "$cnt" | bash scrape.sh -d)
 inst=$(echo "$cnt" | bash scrape.sh -i)
 slid=0;
+cntu="";
 makeHeader
 makeTitle
 makeToc
@@ -77,6 +80,10 @@ do
 	then
 		sle=$(($sle-1))
 		cnti=$(echo "$cnti" | head -n $sle)
+		sle=$(($sle+$slb+1))
+		cntu=$(echo "$cnt" | head -n $sle)
+	else
+		cntu=$cnt
 	fi
 	prcs=$(echo "$cnti" | pandoc -s -f markdown -t html | xmllint --html --xpath '//h1[text()="Conclusion"]' - 2> /dev/null)
 	if [ ! -n "$prcs" ]

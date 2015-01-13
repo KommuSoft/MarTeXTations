@@ -2,7 +2,7 @@
 	make install
 	bash makehtm.sh <$< >$@
 
-%.pdf : %.md custom.less *.css *.sh Makefile
+%.pdf : %.md custom.less *.css *.sh Makefile *.xslt
 	make install
 #	temp := $(basename "$@" ".pdf")
 	bash makepdf.sh <$< | pdflatex -jobname=`basename "$@" ".pdf"` || true
@@ -12,6 +12,6 @@
 	bash makepdf.sh <$< > log.log || true
 
 install : custom.less Makefile .gitmodules
-#	wget "https://www.maths.nottingham.ac.uk/personal/drw/LaTeXMathML.js" -O "LaTeXMathML.js"
-	git submodule update --init --recursive
+	#wget "https://www.maths.nottingham.ac.uk/personal/drw/LaTeXMathML.js" -O "LaTeXMathML.js"
+	#git submodule update --init --recursive
 	lessc custom.less > custom.css

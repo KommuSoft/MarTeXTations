@@ -13,3 +13,9 @@
 [submodule "d3-plugins"]
 	path = d3-plugins
 	url = git@github.com:d3/d3-plugins.git
+[submodule "graphlib-dot"]
+	path = graphlib-dot
+	url = https://github.com/cpettitt/graphlib-dot.git
+[submodule "dagre-d3"]
+	path = dagre-d3
+	url = https://github.com/cpettitt/dagre-d3.git
