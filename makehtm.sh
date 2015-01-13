@@ -7,7 +7,7 @@ function makeHeader () {
 }
 
 function makeFooter () {
-	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script><script type="text/javascript" src="dagre-d3.min.js"></script>
+	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3.rollup.v0.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script><script type="text/javascript" src="dagre-d3.min.js"></script>
 <script type="text/javascript" src="graphlib-dot.min.js"></script></body></html>'
 }
 
