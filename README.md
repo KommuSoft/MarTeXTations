@@ -24,3 +24,7 @@ to generate an `impress.js` presentation, or
      make file.pdf
 
 to generate an LaTeX/beamer presentation.
+
+## End-product
+
+Is the result of the compiler considered to be an *end-product*? Not per se. The compiler outputs HTML or LaTeX which are open formats. In a next stage, one can thus modify the output and improve the result. The idea of this project is more to automate the generation of a first version.
