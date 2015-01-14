@@ -7,8 +7,7 @@ function makeHeader () {
 }
 
 function makeFooter () {
-	echo '</div><script src="jquery.min.js"></script><script src="impress.js/js/impress.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3.rollup.v0.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script><script type="text/javascript" src="dagre-d3.min.js"></script>
-<script type="text/javascript" src="graphlib-dot.min.js"></script></body></html>'
+	echo '</div><script src="jquery.min.js"></script><script language="JavaScript" src="LaTeXMathML.js"></script><script src="impress.js/js/impress.js"></script><script>impress().init();</script><script src="d3/d3.min.js"></script><script src="d3.rollup.v0.min.js"></script><script src="d3plotter/d3plotter/public_html/d3plotter.js"></script></body></html>'
 }
 
 function makeTitle () {
@@ -28,7 +27,7 @@ function makeToc () {
 }
 
 function makeSlide () { #check if contains h1
-	cntip=$(echo "$cnti" | pandoc -f markdown -t html5)
+	cntip=$(echo "$cnti" | pandoc -f markdown -t html)
 	if [ `echo "$cntip" | xmllint --html --xpath 'count(//h1)' -` -gt 0 ]
 	then
 		chpi=$(($chpi+1))

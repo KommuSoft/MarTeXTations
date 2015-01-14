@@ -1,4 +1,4 @@
-%.htm : %.md custom.less *.css *.sh Makefile
+%.htm : %.md custom.less *.css *.sh Makefile *.xslt
 	make install
 	bash makehtm.sh <$< >$@
 
