@@ -1,10 +1,10 @@
 # MarTeXTations
 
-Briding the creation of beautiful presentations and easy-to-make presentation with Markdown, TeX and impress.js (or at least try to).
+Briding the creation of beautiful presentations and easy-to-make presentation with Markdown, TeX and [impress.js](https://github.com/bartaz/impress.js) (or at least try to).
 
 ## Concept
 
-Write a presentation in *Markdown*, and compile it to its `.htm`, `.pdf`,... equivalent.
+Write a presentation in *Markdown*, and compile it to its `.htm`, `.pdf`,... equivalent. The program makes use of [d3.js](https://github.com/mbostock/d3) and [d3plotter.js](https://github.com/KommuSoft/d3plotter).
 
 ## Installation
 

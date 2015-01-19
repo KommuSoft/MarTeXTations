@@ -3,6 +3,7 @@
   <xsl:output method="xml" indent="yes"/>
   <xsl:variable name="looplength" select="'1000'" /> 
   <xsl:key name="kFollowing" match="*" use="generate-id(preceding-sibling::*[starts-with(name(),'h')][1])"/>
+  <xsl:key name="kFollowing" match="*" use="generate-id(preceding-sibling::hr)"/>
   <xsl:template match="/">
     <html lang="en">
       <head>
@@ -50,11 +51,8 @@
     <div id="slide" class="step slide" data-rotate="0" data-x="{$looplength}" data-y="0" data-z="-1000">
       <ul class="breadcrumb">
         <xsl:apply-templates select="((following::hr[1])|(following::*[last()]))[1]" mode="breadcrum"/>
-        <!--<li><xsl:apply-templates select="following::hr[1]/preceding::h1[1]"/></li>
-        <xsl:if test="count(following::hr[1]/preceding::h2[generate-id(preceding::h1[last()])=generate-id(self/following:hr[1]/preceding::h1[last()])][last()]) &gt; 0">
-		    	<span class="divider">/</span><li><xsl:apply-templates select="following::hr[1]/preceding::h2[generate-id(preceding::h1[last()])=generate-id(self/following:hr[1]/preceding::h1[last()])][last()]"/></li>
-        </xsl:if>-->
       </ul>
+        <xsl:apply-templates select="following:." mode="behead"/>
     </div>
   </xsl:template>
   <xsl:template match="//h1" mode="toc">
@@ -73,11 +71,9 @@
     </li>
   </xsl:template>
   <xsl:template match="@*|node()" mode="behead">
-    <xsl:if test="name() != 'h1'">
         <xsl:copy>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
-    </xsl:if>
     </xsl:template>
     <xsl:template match="*" mode="breadcrum">
       <xsl:apply-templates select="preceding::h1[1]" mode="breadcrum"/>
